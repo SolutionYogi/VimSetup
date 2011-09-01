@@ -1,10 +1,9 @@
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JD's VIMRC file
 " Version History:
 " 09/28/2009 - Removed everything which I didn't use.
 "               Added Tab numbe in tab title to use with gt command.
-" 9/1/2011   - Created new VimSetup folder and added CommandT plugin files.
+" 09/01/2011   - Created new VimSetup folder and added CommandT plugin files.
 "              Removed undodir option as I moved back to 7.2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
