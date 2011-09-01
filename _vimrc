@@ -4,6 +4,8 @@
 " Version History:
 " 09/28/2009 - Removed everything which I didn't use.
 "               Added Tab numbe in tab title to use with gt command.
+" 9/1/2011   - Created new VimSetup folder and added CommandT plugin files.
+"              Removed undodir option as I moved back to 7.2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! MySys()
@@ -190,13 +192,6 @@ map <Left> :bprev<CR>
 imap <Left> <ESC>:bprev<CR>
 map <Del> :bd<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MISC
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:so c:\vim\autoclose.vim
-:so c:\vim\surround.vim
-:so c:\vim\matchit.vim
-
 "When you press esc, it will remove the highlighting, very neat!
 "From John of VIEMU fame.
 :nnoremap <esc> :noh<return><esc>
@@ -207,8 +202,8 @@ set guitablabel=(%N)\ %t
 
 set iskeyword-=\$
 
-set undofile
-set undodir=c:\temp\viundo
+"set undofile
+"set undodir=c:\temp\viundo
 
 set nobackup
 set noswapfile
