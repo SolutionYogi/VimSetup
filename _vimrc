@@ -201,8 +201,8 @@ set guitablabel=(%N)\ %t
 
 set iskeyword-=\$
 
-"set undofile
-"set undodir=c:\temp\viundo
+"set undofile - Persistent Undo/redo FTMFW! :)
+set undodir=c:\temp\viundo
 
 set nobackup
 set noswapfile
