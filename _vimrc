@@ -97,9 +97,6 @@ set ruler
 "The commandbar is 2 high
 set cmdheight=2
 
-"Show line number
-set nu
-
 "Do not redraw, when running macros.. lazyredraw
 set lz
 
