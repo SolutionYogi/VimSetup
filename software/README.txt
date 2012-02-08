@@ -28,6 +28,15 @@ Command-T installation Instructions for Vim 7.3 and Windows 7
 
 13. Find out your home directory [echo $HOME Let's say it is {C:\Users\SolutionYogi\VimFiles}]
 
+	[Make sure that the 'VimFiles' folder has following items:
+		1. ruby -> command-t
+			It should have total of 33 files in 3 folders. 
+			If it does not, it means that vimball failed due to some reason. [I have it happen on certain machine.]
+			In that case, go to C:\VimSetup\software\command-t\ruby\command-t and copy it over to your VimFiles folder.
+		2. plugin/commant-t.vim
+	]
+
+
 14. Go to C:\Users\SolutionYogi\VimFiles\ruby\command-t
 
 15. Execute [ruby extconf.rb]
