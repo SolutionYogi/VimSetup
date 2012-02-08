@@ -184,13 +184,15 @@ set si
 "C-style indeting
 set cindent
 
-" buffer switching/management, might as well use those keys for something useful
+" let's use the left/right arrow keys for buffer switching as they are no good
+" for anything else.
 map <Right> :bnext<CR>
 imap <Right> <ESC>:bnext<CR>
 map <Left> :bprev<CR>
 imap <Left> <ESC>:bprev<CR>
 map <Del> :bd<CR>
 
+" We will map Up and Down keys to go through recent change list in the file. 
 map <Up> g;
 map <Down> g,
 
