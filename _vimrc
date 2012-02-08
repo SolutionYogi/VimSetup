@@ -215,4 +215,15 @@ set noswapfile
 "Trim trailing whitespace by pressing leader + W.
 map <leader>W  :%s/\s\+$//<cr>:let @/=''<CR>
 
+"Always use relative line numbering.
+set rnu 
 
+function! g:ToggleNuMode() 
+if(&rnu == 1) 
+    set nu 
+else 
+    set rnu 
+endif 
+endfunc 
+
+nnoremap <C-L> :call g:ToggleNuMode()<cr> 
