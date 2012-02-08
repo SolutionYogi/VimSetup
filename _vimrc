@@ -149,7 +149,7 @@ set hlsearch
 """"""""""""""""""""""""""""""
 " Statusline
 """"""""""""""""""""""""""""""
-"Always hide the statusline
+"Always show Status line.
 set laststatus=2
 
 "Format the statusline
@@ -191,6 +191,9 @@ map <Left> :bprev<CR>
 imap <Left> <ESC>:bprev<CR>
 map <Del> :bd<CR>
 
+map <Up> g;
+map <Down> g,
+
 "When you press esc, it will remove the highlighting, very neat!
 "From John of VIEMU fame.
 :nnoremap <esc> :noh<return><esc>
@@ -206,3 +209,8 @@ set iskeyword-=\$
 
 set nobackup
 set noswapfile
+
+"Trim trailing whitespace by pressing leader + W.
+map <leader>W  :%s/\s\+$//<cr>:let @/=''<CR>
+
+
