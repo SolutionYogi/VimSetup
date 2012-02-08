@@ -1,51 +1,62 @@
 Command-T installation Instructions for Vim 7.3 and Windows 7
 
-1. Clone VimSetup repository in {C:\VimSetup\}
+Important Notes:
 
-1. Install gvim73_46.exe [Let's say {C:\Program Files\Vim}]
+* You must follow instructions in this exact order. [E.g. Install Ruby First and then Vim]
 
-2. Copy over the gvim.exe (which is a patched version including Ruby support) to {C:\Program Files\Vim}.
+* You must uninstall earlier version of Vim/Ruby
 
-3. Install Ruby using rubyinstaller-1.9.1-p430.exe to {C:\Rub191\}
+* If you don't trust the binaries in my repo, feel free to get them from the official sites. Make sure to get the exact version.
 
-4. Install Dev Kit using DevKit-4.5.0-20100819-1536-sfx.exe {C:\Ruby191\DevKit}
+* All the paths within {} brackets may need to be adjusted based on your setup.
 
-5. Open Start -> All Programs -> Ruby 1.9.1 -> Start Command Prompt With Ruby using administrative rights.
+1. Clone this VimSetup repository in {C:\VimSetup\}
 
-6. Go to C:\Ruby191\DevKit
+2. Install Ruby using rubyinstaller-1.9.1-p430.exe to {C:\Rub191\}
 
-7. Execute [ruby dk.rb init]
+3. Install Dev Kit using DevKit-4.5.0-20100819-1536-sfx.exe {C:\Ruby191\DevKit}
 
-8. Execute [ruby dk.rb install]
+4. Install gvim73_46.exe [Let's say {C:\Program Files\Vim}]
 
-9. Execute [devkitvars.bat]
+5. Copy over the gvim.exe (which is a patched version including Ruby support) to {C:\Program Files\Vim}. 
+   This patched Vim was obtained from: http://wyw.dcweb.cn/
 
-10. Keep the command prompt open, open Vim.
+8. Open Start -> All Programs -> Ruby 1.9.1 -> Start Command Prompt With Ruby using administrative rights.
 
-11. Open c:\VimSetup\software\command-t-1.3.1.vba
+7. Go to C:\Ruby191\DevKit
 
-12. Enter [:so %]
+8. Execute [ruby dk.rb init]
 
-13. Find out your home directory [echo $HOME Let's say it is {C:\Users\SolutionYogi\VimFiles}]
+9. Execute [ruby dk.rb install]
+
+10. Execute [devkitvars.bat]
+
+11. Keep this command prompt open and run gVim from Start -> All Programs -> Vim
+
+12. Open c:\VimSetup\software\command-t-1.3.1.vba in Vim.
+
+13. Enter [:so %]
+
+14. Find out your home directory [echo $HOME Let's say it is {C:\Users\SolutionYogi\VimFiles}]
 
 	[Make sure that the 'VimFiles' folder has following items:
 		1. ruby -> command-t
 			It should have total of 33 files in 3 folders. 
 			If it does not, it means that vimball failed due to some reason. [I have it happen on certain machine.]
-			In that case, go to C:\VimSetup\software\command-t\ruby\command-t and copy it over to your VimFiles folder.
+			In that case, go to {C:\VimSetup\software\command-t\ruby\command-t} and copy it over to your VimFiles folder.
 		2. plugin/commant-t.vim
 	]
 
 
-14. Go to C:\Users\SolutionYogi\VimFiles\ruby\command-t
+15. Go to {C:\Users\SolutionYogi\VimFiles\ruby\command-t}
 
-15. Execute [ruby extconf.rb]
+16. Execute [ruby extconf.rb]
 	You should see
 	[
 	Checking for ruby.h yes
 	creating Makefile
 	]
-16. Execute [make]
+17. Execute [make]
 	You should see something like
 	[
 gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H
@@ -58,10 +69,4 @@ gcc -shared -s -o ext.so ext.o match.o matcher.o -L. -LC:/Ruby191/lib -L.  -Wl,-
 ll32 -lws2_32
 	]
 
-16. Modify the _vimrc in C:\Program Files\VIm directory to read like this (assuming that this project is synced in C:\VimSetup folder.)
-
-set nocompatible
-
-set runtimepath+=c:\VimSetup
-
-source c:\vimsetup\_vimrc
+18. That's it, close and re-open Vim and Command-T should be working. Happy Coding! 
