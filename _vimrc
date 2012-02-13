@@ -224,3 +224,16 @@ endif
 endfunc 
 
 nnoremap <C-L> :call g:ToggleNuMode()<cr> 
+
+
+"Making vim remember things across session. Each config option is separated by
+"comma.
+"'1000 - Remember details for last 1000 files
+"f1 - Save global marks and jumps
+"<500 - Remember up to 500 registers
+":1000 - Remember last 1000 commands
+"@1000 - Remember last 1000 input line history.
+"/1000 - Remember last 100 search
+"%1000 - Remember last 1000 files in the buffer list.
+"
+:set viminfo='1000,f1,<500,:1000,@1000,/1000,%1000,h
