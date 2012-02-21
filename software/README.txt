@@ -16,7 +16,7 @@ Important Notes:
 
 3. Install Dev Kit using DevKit-4.5.0-20100819-1536-sfx.exe {C:\Ruby191\DevKit}
 
-4. Install gvim73_46.exe [Let's say {C:\Program Files\Vim}]
+4. Install gvim73_46.exe [Let's say {C:\Program Files\Vim\vim73}]
 
 5. Copy over the gvim.exe (which is a patched version including Ruby support) to {C:\Program Files\Vim}. 
    This patched Vim was obtained from: http://wyw.dcweb.cn/
@@ -26,12 +26,29 @@ Important Notes:
 7. Go to C:\Ruby191\DevKit
 
 8. Execute [ruby dk.rb init]
+	You should see 
+
+	[INFO] found RubyInstaller v1.9.1 at C:/Ruby191
+
+	Initialization complete! Please review and modify the auto-generated
+	'config.yml' file to ensure it contains the root directories to all
+	of the installed Rubies you want enhanced by the DevKit.
 
 9. Execute [ruby dk.rb install]
+	
+	You should see
+
+	[INFO] Installing C:/Ruby191/lib/ruby/site_ruby/1.9.1/rubygems/defaults/operating_system.rb
+	[INFO] Installing C:/Ruby191/lib/ruby/site_ruby/devkit.rb
+	
 
 10. Execute [devkitvars.bat]
 
+	Adding the DevKit to PATH...
+
 11. Keep this command prompt open and run gVim from Start -> All Programs -> Vim
+
+	
 
 12. Open c:\VimSetup\software\command-t-1.3.1.vba in Vim.
 
