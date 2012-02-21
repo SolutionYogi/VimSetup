@@ -76,14 +76,10 @@ Important Notes:
 17. Execute [make]
 	You should see something like
 	[
-gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H
-  -O2 -g -Wall -Wno-parentheses   -std=c99 -Wall -Wextra -Wno-unused-parameter -o ext.o -c ext.c
-gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H
-  -O2 -g -Wall -Wno-parentheses   -std=c99 -Wall -Wextra -Wno-unused-parameter -o match.o -c match.c
-gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H
-  -O2 -g -Wall -Wno-parentheses   -std=c99 -Wall -Wextra -Wno-unused-parameter -o matcher.o -c matcher.c
-gcc -shared -s -o ext.so ext.o match.o matcher.o -L. -LC:/Ruby191/lib -L.  -Wl,--enable-auto-image-base,--enable-auto-import   -lmsvcrt-ruby191  -lshe
-ll32 -lws2_32
+		gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H  -O2 -g -Wall -Wno-parentheses   -std=c99 -Wall -Wextra -Wno-unused-parameter -o ext.o -c ext.c
+		gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H  -O2 -g -Wall -Wno-parentheses   -std=c99 -Wall -Wextra -Wno-unused-parameter -o match.o -c match.c
+		gcc -I. -IC:/Ruby191/include/ruby-1.9.1/i386-mingw32 -I/C/Ruby191/include/ruby-1.9.1/ruby/backward -I/C/Ruby191/include/ruby-1.9.1 -I. -DHAVE_RUBY_H  -O2 -g -Wall -Wno-parentheses   -std=c99 -Wall -Wextra -Wno-unused-parameter -o matcher.o -c matcher.c
+		gcc -shared -s -o ext.so ext.o match.o matcher.o -L. -LC:/Ruby191/lib -L.  -Wl,--enable-auto-image-base,--enable-auto-import   -lmsvcrt-ruby191  -lshe ll32 -lws2_32
 	]
 
 18. That's it, close and re-open Vim and Command-T should be working. Happy Coding! 
