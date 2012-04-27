@@ -3,8 +3,6 @@
 " Version History:
 " 09/28/2009 - Removed everything which I didn't use.
 "               Added Tab numbe in tab title to use with gt command.
-" 09/01/2011   - Created new VimSetup folder and added CommandT plugin files.
-"              Removed undodir option as I moved back to 7.2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! MySys()
@@ -205,6 +203,9 @@ set iskeyword-=\$
 
 "set undofile - Persistent Undo/redo FTMFW! :)
 set undodir=c:\temp\viundo
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 set nobackup
 set noswapfile
