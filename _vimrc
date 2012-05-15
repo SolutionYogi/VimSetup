@@ -15,6 +15,23 @@ endfunction
 "Get out of VI's compatible mode..
 set nocompatible
 
+"Next four lines are required for VUNDLE.
+"For a new machine, after setting this up, run :BundleInstall for the system
+"to actually install these bundles.
+filetype off
+set rtp+=C:\vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+"Creates new shorts cuts for automatically surrounding text
+"Eg. you can use cs" to surround text by double quotes.
+Bundle 'tpope/vim-surround'
+Bundle 'Townk/vim-autoclose'
+Bundle 'kien/ctrlp.vim'
+Bundle 'edsono/vim-matchit'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+
 "Sets how many lines of history VIM har to remember
 set history=1000
 
@@ -187,9 +204,16 @@ map <Left> :bprev<CR>
 imap <Left> <ESC>:bprev<CR>
 map <Del> :bd<CR>
 
-" We will map Up and Down keys to go through recent change list in the file. 
+" We will map Up and Down keys to go through recent change list in the file.
 map <Up> g;
 map <Down> g,
+
+" Stupid shift key fixes
+cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+cmap Tabe tabe
 
 "When you press esc, it will remove the highlighting, very neat!
 "From John of VIEMU fame.
@@ -199,13 +223,18 @@ map <Down> g,
 "with the gt command. From news.ycominbator.com
 set guitablabel=(%N)\ %t
 
+"For JavaScript, we want to use $ as the keyword, this will allow us to write
+"function like pub.module$FunctionName and auto complete will work correctly.
+"See: http://stackoverflow.com/questions/1923680/vim-autocomplete-use-as-the-word-separator
 set iskeyword-=\$
 
 "set undofile - Persistent Undo/redo FTMFW! :)
-set undodir=c:\temp\viundo
-set undofile
-set undolevels=1000 "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+if has('persistent_undo')
+    set undodir=c:\temp\viundo
+    set undofile
+    set undolevels=1000 "maximum number of changes that can be undone
+    set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+endif
 
 set nobackup
 set noswapfile
@@ -214,17 +243,17 @@ set noswapfile
 map <leader>W  :%s/\s\+$//<cr>:let @/=''<CR>
 
 "Always use relative line numbering.
-set rnu 
+set rnu
 
-function! g:ToggleNuMode() 
-if(&rnu == 1) 
-    set nu 
-else 
-    set rnu 
-endif 
-endfunc 
+function! g:ToggleNuMode()
+if(&rnu == 1)
+    set nu
+else
+    set rnu
+endif
+endfunc
 
-nnoremap <C-L> :call g:ToggleNuMode()<cr> 
+nnoremap <C-L> :call g:ToggleNuMode()<cr>
 
 
 "Making vim remember things across session. Each config option is separated by
@@ -238,3 +267,38 @@ nnoremap <C-L> :call g:ToggleNuMode()<cr>
 "%1000 - Remember last 1000 files in the buffer list.
 "
 :set viminfo='1000,f1,<500,:1000,@1000,/1000,%1000,h
+
+"We do not want folding for our code. I hate it.
+set nofoldenable
+
+
+" always switch to the current file directory.
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+
+" abbrev. of messages (avoids 'hit enter')
+set shortmess+=filmnrxoOtT
+
+
+set backspace=indent,eol,start  " backspace for dummies
+set linespace=0                 " No extra spaces between rows
+set showmatch                   " show matching brackets/parenthesis
+set winminheight=0              " windows can be 0 line high
+set wildmenu                    " show list instead of just completing
+set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
+set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
+set scrolljump=5                " lines to scroll when cursor leaves screen
+set scrolloff=3                 " minimum lines to keep above and below cursor
+set list
+set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+
+
+" Remove trailing whitespaces and ^M chars
+autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+
+" visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+
+
