@@ -31,6 +31,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'tsaleh/vim-align'
+Bundle 'vim-scripts/SQLUtilities'
 
 "Sets how many lines of history VIM har to remember
 set history=1000
@@ -299,6 +301,4 @@ autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWriteP
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
-
-
 
