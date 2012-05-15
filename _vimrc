@@ -32,7 +32,6 @@ Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tsaleh/vim-align'
-Bundle 'vim-scripts/SQLUtilities'
 
 "Sets how many lines of history VIM har to remember
 set history=1000
