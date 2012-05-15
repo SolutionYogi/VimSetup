@@ -15,6 +15,8 @@ endfunction
 "Get out of VI's compatible mode..
 set nocompatible
 
+set encoding=utf-8
+
 "Next four lines are required for VUNDLE.
 "For a new machine, after setting this up, run :BundleInstall for the system
 "to actually install these bundles.
