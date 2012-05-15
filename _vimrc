@@ -101,7 +101,7 @@ nmap <leader>fu :se ff=unix<cr>
 " VIM userinterface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Keep at least 10 lines visible from the cursor bottom when scrolling.
-set so=10
+set so=20
 
 "Turn on WiLd menu
 set wildmenu
