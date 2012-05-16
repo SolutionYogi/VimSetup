@@ -271,7 +271,7 @@ nnoremap <C-L> :call g:ToggleNuMode()<cr>
 "
 :set viminfo='1000,f1,<500,:1000,@1000,/1000,%1000,h
 
-"We do not want folding for our code. I hate it.
+"Am not a folding fan, so let's disable it.
 set nofoldenable
 
 
@@ -292,7 +292,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
 set scrolljump=5                " lines to scroll when cursor leaves screen
 set scrolloff=3                 " minimum lines to keep above and below cursor
 set list
-set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=                  "We don't want to show any special characters.
 
 
 " Remove trailing whitespaces and ^M chars
@@ -303,3 +303,8 @@ autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWriteP
 vnoremap < <gv
 vnoremap > >gv
 
+if has('win32') || has('win64')
+    "On Windows, it is easier to use System clipboard as default target for
+    "yank/paste.
+    set clipboard=unnamed
+endif
