@@ -12,4 +12,4 @@ set runtimepath+=c:\VimSetup
 
 source c:\vimsetup\_vimrc
 
-Note: To install Command-T with Vim 7.3 please refer to readme.txt under software folder. 
+Note: I do not use Commant-T anymore. CtrlP is much more awesome. 
