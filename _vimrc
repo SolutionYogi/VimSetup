@@ -211,13 +211,6 @@ map <Del> :bd<CR>
 map <Up> g;
 map <Down> g,
 
-" Stupid shift key fixes
-cmap W w
-cmap WQ wq
-cmap wQ wq
-cmap Q q
-cmap Tabe tabe
-
 "When you press esc, it will remove the highlighting, very neat!
 "From John of VIEMU fame.
 :nnoremap <esc> :noh<return><esc>
@@ -291,8 +284,6 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
 set scrolljump=5                " lines to scroll when cursor leaves screen
 set scrolloff=3                 " minimum lines to keep above and below cursor
-set list
-set listchars=                  "We don't want to show any special characters.
 
 
 " Remove trailing whitespaces and ^M chars
@@ -308,3 +299,8 @@ if has('win32') || has('win64')
     "yank/paste.
     set clipboard=unnamed
 endif
+
+"For CtrlP, we only want to match on file name and ignore the path.
+let g:ctrlp_by_filename=1
+let g:ctrpl_clear_cache_on_exit=1
+
