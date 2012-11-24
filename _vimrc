@@ -1,8 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JD's VIMRC file
-" Version History:
-" 09/28/2009 - Removed everything which I didn't use.
-"               Added Tab numbe in tab title to use with gt command.
+" SolutionYogi's VIMRC file
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! MySys()
