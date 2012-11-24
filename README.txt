@@ -1,15 +1,23 @@
 This repository contains my Vim configuration file.
 
-This VIMRC file may have settings which are applicable only on Windows. Please be careful before copying it on your machine. 
+As I work on Windows exclusively, my configuration may contain settings which are only applicable for Windows. 
 
 Feel free to steal anything you like from this file. 
 
-For Windows, modify the _vimrc in C:\Program Files\VIm directory to read like this (assuming that this project is synced in C:\VimSetup folder.)
+Instructions:
 
-set nocompatible
+1. Create folder C:\VimSetup
 
-set runtimepath+=c:\VimSetup
+2. Sync this repository in folder created in step 1.
 
-source c:\vimsetup\_vimrc
+3. Modify your main _vimrc (Located in C:\Program Files\Vim) to read like below:
+
+  set nocompatible
+  
+  set runtimepath+=c:\VimSetup
+  
+  source c:\vimsetup\_vimrc
+
+4. There is no step 4. 
 
 Note: I do not use Commant-T anymore. CtrlP is much more awesome. 
