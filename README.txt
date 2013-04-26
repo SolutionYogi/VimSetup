@@ -18,6 +18,10 @@ Instructions:
   
   source c:\vimsetup\_vimrc
 
-4. There is no step 4. 
+4. Clone Vundle repository https://github.com/gmarik/vundle in C:\Vundle folder. [If you change the path, modify C:\VimSetup\_vimrc to reflect the matching path.)
+
+5. When Vim starts for the first time, run :BundleInstall command to install all the bundles. 
+
+6. There is no Step 6! :)
 
 Note: I do not use Commant-T anymore. CtrlP is much more awesome. 
